@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Reverser</string>
+    <string name="add_contacts">add_contacts</string>
+    <string name="direct_message">direct_message</string>
+</resources>
