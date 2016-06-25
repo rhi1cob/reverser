@@ -1,5 +1,6 @@
 package com.example.himanshu.reverser;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -34,6 +35,8 @@ public class Home extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 System.out.println("onSuccess");
+                Intent intent = new Intent(Home.this, Feed.class);
+                startActivity(intent);
             }
 
             @Override
@@ -46,6 +49,13 @@ public class Home extends AppCompatActivity {
                 Log.v("LoginActivity", exception.getCause().toString());
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
